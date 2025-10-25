@@ -29,200 +29,23 @@ export default function Hero() {
       ref={heroRef}
       className="relative w-full h-screen overflow-hidden bg-[#fafaf9]"
     >
-      {/* Flowing Background Patterns - Inspired by Lando Norris's site */}
+      {/* Blurred Background Image */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* Flowing Curved Path 1 */}
-        <motion.svg
-          className="absolute inset-0 w-full h-full"
-          viewBox="0 0 1920 1080"
-          preserveAspectRatio="xMidYMid slice"
-        >
-          <motion.path
-            d="M -100 200 Q 300 100, 600 300 T 1200 400"
-            fill="none"
-            stroke="#b8b8b8"
-            strokeWidth="4"
-            opacity="0.7"
-            animate={{
-              d: [
-                "M -100 200 Q 300 100, 600 300 T 1200 400",
-                "M -100 280 Q 350 80, 650 350 T 1250 480",
-                "M -100 200 Q 300 100, 600 300 T 1200 400"
-              ]
-            }}
-            transition={{
-              duration: 8,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-          />
-        </motion.svg>
-
-        {/* Flowing Curved Path 2 */}
-        <motion.svg
-          className="absolute inset-0 w-full h-full"
-          viewBox="0 0 1920 1080"
-          preserveAspectRatio="xMidYMid slice"
-        >
-          <motion.path
-            d="M 2000 150 Q 1600 250, 1300 200 T 800 350"
-            fill="none"
-            stroke="#a8a8a8"
-            strokeWidth="4"
-            opacity="0.65"
-            animate={{
-              d: [
-                "M 2000 150 Q 1600 250, 1300 200 T 800 350",
-                "M 2000 230 Q 1650 300, 1350 250 T 850 420",
-                "M 2000 150 Q 1600 250, 1300 200 T 800 350"
-              ]
-            }}
-            transition={{
-              duration: 10,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-          />
-        </motion.svg>
-
-        {/* Flowing Curved Path 3 */}
-        <motion.svg
-          className="absolute inset-0 w-full h-full"
-          viewBox="0 0 1920 1080"
-          preserveAspectRatio="xMidYMid slice"
-        >
-          <motion.path
-            d="M -100 500 Q 400 450, 800 520 T 1600 480 T 2100 550"
-            fill="none"
-            stroke="#c0c0c0"
-            strokeWidth="5"
-            opacity="0.75"
-            animate={{
-              d: [
-                "M -100 500 Q 400 450, 800 520 T 1600 480 T 2100 550",
-                "M -100 580 Q 450 400, 850 580 T 1650 540 T 2100 630",
-                "M -100 500 Q 400 450, 800 520 T 1600 480 T 2100 550"
-              ]
-            }}
-            transition={{
-              duration: 12,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-          />
-        </motion.svg>
-
-        {/* Flowing Curved Path 4 */}
-        <motion.svg
-          className="absolute inset-0 w-full h-full"
-          viewBox="0 0 1920 1080"
-          preserveAspectRatio="xMidYMid slice"
-        >
-          <motion.path
-            d="M -100 900 Q 350 800, 700 850 T 1300 920"
-            fill="none"
-            stroke="#a8a8a8"
-            strokeWidth="4"
-            opacity="0.68"
-            animate={{
-              d: [
-                "M -100 900 Q 350 800, 700 850 T 1300 920",
-                "M -100 980 Q 400 750, 750 900 T 1350 1000",
-                "M -100 900 Q 350 800, 700 850 T 1300 920"
-              ]
-            }}
-            transition={{
-              duration: 9,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-          />
-        </motion.svg>
-
-        {/* Flowing Curved Path 5 */}
-        <motion.svg
-          className="absolute inset-0 w-full h-full"
-          viewBox="0 0 1920 1080"
-          preserveAspectRatio="xMidYMid slice"
-        >
-          <motion.path
-            d="M 2100 850 Q 1700 780, 1400 820 T 900 900"
-            fill="none"
-            stroke="#b8b8b8"
-            strokeWidth="4"
-            opacity="0.7"
-            animate={{
-              d: [
-                "M 2100 850 Q 1700 780, 1400 820 T 900 900",
-                "M 2100 930 Q 1750 730, 1450 870 T 950 980",
-                "M 2100 850 Q 1700 780, 1400 820 T 900 900"
-              ]
-            }}
-            transition={{
-              duration: 11,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-          />
-        </motion.svg>
-
-        {/* Flowing Curved Path 6 */}
-        <motion.svg
-          className="absolute inset-0 w-full h-full"
-          viewBox="0 0 1920 1080"
-          preserveAspectRatio="xMidYMid slice"
-        >
-          <motion.path
-            d="M 100 100 Q 500 300, 900 500 T 1700 900"
-            fill="none"
-            stroke="#acacac"
-            strokeWidth="4"
-            opacity="0.65"
-            animate={{
-              d: [
-                "M 100 100 Q 500 300, 900 500 T 1700 900",
-                "M 150 150 Q 550 350, 950 550 T 1750 950",
-                "M 100 100 Q 500 300, 900 500 T 1700 900"
-              ]
-            }}
-            transition={{
-              duration: 14,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-          />
-        </motion.svg>
-
-        {/* Strong gradient overlays */}
-        <motion.div
-          className="absolute top-0 left-0 w-[900px] h-[900px] rounded-full bg-red-200/25 blur-3xl"
-          animate={{ 
-            scale: [1, 1.3, 1],
-            opacity: [0.25, 0.4, 0.25],
-            x: [0, 50, 0],
-            y: [0, 30, 0]
+        <Image
+          src="/hero-background.webp"
+          alt="Background"
+          fill
+          className="object-cover"
+          style={{
+            filter: 'blur(4px)',
+            opacity: 0.4,
+            transform: 'scale(1.05)'
           }}
-          transition={{ 
-            duration: 4,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
+          priority
+          quality={90}
         />
-        <motion.div
-          className="absolute bottom-0 right-0 w-[800px] h-[800px] rounded-full bg-orange-200/30 blur-3xl"
-          animate={{ 
-            scale: [1, 1.4, 1],
-            opacity: [0.3, 0.45, 0.3],
-            x: [0, -40, 0],
-            y: [0, -25, 0]
-          }}
-          transition={{ 
-            duration: 5,
-            delay: 0.5,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
+        {/* Backdrop overlay for additional depth */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-transparent to-white/15" />
       </div>
 
       {/* Main portrait container */}
