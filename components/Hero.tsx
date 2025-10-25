@@ -77,25 +77,26 @@ export default function Hero() {
   return (
     <div
       ref={heroRef}
-      className="relative w-full h-screen overflow-hidden bg-[#fafaf9]"
+      className="relative w-full h-screen overflow-hidden bg-white"
     >
-      {/* Blurred Background Image */}
+      {/* Hero Background Image */}
       <div className="absolute inset-0 overflow-hidden">
         <Image
-          src="/hero-background.webp"
+          src="/hero-background2.jpg"
           alt="Background"
           fill
           className="object-cover"
           style={{
-            filter: 'blur(4px)',
-            opacity: 0.4,
+            filter: 'blur(3px)',
+            opacity: 0.3,
             transform: 'scale(1.05)'
           }}
           priority
           quality={90}
         />
-        {/* Backdrop overlay for additional depth */}
-        <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-transparent to-white/15" />
+        {/* Elegant vignette overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-white/60" />
+        <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-white/30" />
       </div>
 
       {/* Main portrait container with scroll-based scaling */}
