@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
@@ -15,7 +15,6 @@ export default function Hero() {
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
         
-        // Update CSS variable for mask position
         overlayRef.current.style.setProperty('--mouse-x', `${x}px`);
         overlayRef.current.style.setProperty('--mouse-y', `${y}px`);
       }
@@ -28,16 +27,180 @@ export default function Hero() {
   return (
     <div
       ref={heroRef}
-      className="relative w-full h-screen overflow-hidden bg-purple-100"
+      className="relative w-full h-screen overflow-hidden bg-[#fafaf9]"
     >
-      {/* Clean Background - Light purple/pink gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-200 via-pink-100 to-purple-300">
-        {/* Purple/Pink Energy Glow */}
+      {/* Flowing Background Patterns - Inspired by Lando Norris's site */}
+      <div className="absolute inset-0 overflow-hidden">
+        {/* Flowing Curved Path 1 */}
+        <motion.svg
+          className="absolute inset-0 w-full h-full"
+          viewBox="0 0 1920 1080"
+          preserveAspectRatio="xMidYMid slice"
+        >
+          <motion.path
+            d="M -100 200 Q 300 100, 600 300 T 1200 400"
+            fill="none"
+            stroke="#b8b8b8"
+            strokeWidth="4"
+            opacity="0.7"
+            animate={{
+              d: [
+                "M -100 200 Q 300 100, 600 300 T 1200 400",
+                "M -100 280 Q 350 80, 650 350 T 1250 480",
+                "M -100 200 Q 300 100, 600 300 T 1200 400"
+              ]
+            }}
+            transition={{
+              duration: 8,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+        </motion.svg>
+
+        {/* Flowing Curved Path 2 */}
+        <motion.svg
+          className="absolute inset-0 w-full h-full"
+          viewBox="0 0 1920 1080"
+          preserveAspectRatio="xMidYMid slice"
+        >
+          <motion.path
+            d="M 2000 150 Q 1600 250, 1300 200 T 800 350"
+            fill="none"
+            stroke="#a8a8a8"
+            strokeWidth="4"
+            opacity="0.65"
+            animate={{
+              d: [
+                "M 2000 150 Q 1600 250, 1300 200 T 800 350",
+                "M 2000 230 Q 1650 300, 1350 250 T 850 420",
+                "M 2000 150 Q 1600 250, 1300 200 T 800 350"
+              ]
+            }}
+            transition={{
+              duration: 10,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+        </motion.svg>
+
+        {/* Flowing Curved Path 3 */}
+        <motion.svg
+          className="absolute inset-0 w-full h-full"
+          viewBox="0 0 1920 1080"
+          preserveAspectRatio="xMidYMid slice"
+        >
+          <motion.path
+            d="M -100 500 Q 400 450, 800 520 T 1600 480 T 2100 550"
+            fill="none"
+            stroke="#c0c0c0"
+            strokeWidth="5"
+            opacity="0.75"
+            animate={{
+              d: [
+                "M -100 500 Q 400 450, 800 520 T 1600 480 T 2100 550",
+                "M -100 580 Q 450 400, 850 580 T 1650 540 T 2100 630",
+                "M -100 500 Q 400 450, 800 520 T 1600 480 T 2100 550"
+              ]
+            }}
+            transition={{
+              duration: 12,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+        </motion.svg>
+
+        {/* Flowing Curved Path 4 */}
+        <motion.svg
+          className="absolute inset-0 w-full h-full"
+          viewBox="0 0 1920 1080"
+          preserveAspectRatio="xMidYMid slice"
+        >
+          <motion.path
+            d="M -100 900 Q 350 800, 700 850 T 1300 920"
+            fill="none"
+            stroke="#a8a8a8"
+            strokeWidth="4"
+            opacity="0.68"
+            animate={{
+              d: [
+                "M -100 900 Q 350 800, 700 850 T 1300 920",
+                "M -100 980 Q 400 750, 750 900 T 1350 1000",
+                "M -100 900 Q 350 800, 700 850 T 1300 920"
+              ]
+            }}
+            transition={{
+              duration: 9,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+        </motion.svg>
+
+        {/* Flowing Curved Path 5 */}
+        <motion.svg
+          className="absolute inset-0 w-full h-full"
+          viewBox="0 0 1920 1080"
+          preserveAspectRatio="xMidYMid slice"
+        >
+          <motion.path
+            d="M 2100 850 Q 1700 780, 1400 820 T 900 900"
+            fill="none"
+            stroke="#b8b8b8"
+            strokeWidth="4"
+            opacity="0.7"
+            animate={{
+              d: [
+                "M 2100 850 Q 1700 780, 1400 820 T 900 900",
+                "M 2100 930 Q 1750 730, 1450 870 T 950 980",
+                "M 2100 850 Q 1700 780, 1400 820 T 900 900"
+              ]
+            }}
+            transition={{
+              duration: 11,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+        </motion.svg>
+
+        {/* Flowing Curved Path 6 */}
+        <motion.svg
+          className="absolute inset-0 w-full h-full"
+          viewBox="0 0 1920 1080"
+          preserveAspectRatio="xMidYMid slice"
+        >
+          <motion.path
+            d="M 100 100 Q 500 300, 900 500 T 1700 900"
+            fill="none"
+            stroke="#acacac"
+            strokeWidth="4"
+            opacity="0.65"
+            animate={{
+              d: [
+                "M 100 100 Q 500 300, 900 500 T 1700 900",
+                "M 150 150 Q 550 350, 950 550 T 1750 950",
+                "M 100 100 Q 500 300, 900 500 T 1700 900"
+              ]
+            }}
+            transition={{
+              duration: 14,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+        </motion.svg>
+
+        {/* Strong gradient overlays */}
         <motion.div
-          className="absolute top-1/3 left-1/3 w-[600px] h-[600px] rounded-full bg-purple-400/30 blur-3xl"
+          className="absolute top-0 left-0 w-[900px] h-[900px] rounded-full bg-red-200/25 blur-3xl"
           animate={{ 
-            scale: [1, 1.2, 1],
-            opacity: [0.3, 0.5, 0.3]
+            scale: [1, 1.3, 1],
+            opacity: [0.25, 0.4, 0.25],
+            x: [0, 50, 0],
+            y: [0, 30, 0]
           }}
           transition={{ 
             duration: 4,
@@ -46,13 +209,15 @@ export default function Hero() {
           }}
         />
         <motion.div
-          className="absolute top-1/4 right-1/3 w-[500px] h-[500px] rounded-full bg-pink-400/25 blur-3xl"
+          className="absolute bottom-0 right-0 w-[800px] h-[800px] rounded-full bg-orange-200/30 blur-3xl"
           animate={{ 
-            scale: [1, 1.3, 1],
-            opacity: [0.25, 0.45, 0.25]
+            scale: [1, 1.4, 1],
+            opacity: [0.3, 0.45, 0.3],
+            x: [0, -40, 0],
+            y: [0, -25, 0]
           }}
           transition={{ 
-            duration: 4.5,
+            duration: 5,
             delay: 0.5,
             repeat: Infinity,
             ease: "easeInOut"
@@ -60,9 +225,9 @@ export default function Hero() {
         />
       </div>
 
-      {/* Main portrait container - fills the screen like Lando's site */}
+      {/* Main portrait container */}
       <div className="relative w-full h-full flex items-center justify-center">
-        {/* Base layer - Normal Luffy (always visible) */}
+        {/* Base layer - Normal Luffy */}
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="relative w-full h-full max-w-[1400px]">
             <Image
@@ -76,7 +241,7 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Overlay layer - Gear 5 Luffy + Conqueror's Haki (revealed through mask following cursor) */}
+        {/* Overlay layer - Gear 5 Luffy with mask reveal */}
         <div
           ref={overlayRef}
           className="absolute inset-0 flex items-center justify-center pointer-events-none mask-reveal"
@@ -85,510 +250,72 @@ export default function Hero() {
             '--mouse-y': '50%',
           } as React.CSSProperties}
         >
-          {/* Conqueror's Haki Lightning - Only visible in masked area */}
-          <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 800" preserveAspectRatio="xMidYMid slice" style={{ overflow: 'visible' }}>
-          <defs>
-            {/* Red/Pink glow filter for lightning */}
-            <filter id="lightning-glow">
-              <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
-              <feMerge>
-                <feMergeNode in="coloredBlur"/>
-                <feMergeNode in="SourceGraphic"/>
-              </feMerge>
-            </filter>
-          </defs>
+          {/* Conqueror's Haki Lightning */}
+          <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 800" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <filter id="lightning-glow">
+                <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+                <feMerge>
+                  <feMergeNode in="coloredBlur"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+            </defs>
 
-          {/* Lightning Bolt 1 - Top Left (radiating from center 750,400) */}
-          <motion.path
-            d="M 750 400 L 710 340 L 730 340 L 660 260 L 690 260 L 600 150 L 650 180 L 620 180 L 680 270 L 650 270 L 720 360 Z"
-            fill="none"
-            stroke="#dc2626"
-            strokeWidth="22"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            filter="url(#lightning-glow)"
-            initial={{ pathLength: 0, opacity: 0 }}
-            animate={{ 
-              pathLength: [0, 1],
-              opacity: [0, 1, 1, 0]
-            }}
-            transition={{ 
-              duration: 0.4,
-              repeat: Infinity,
-              repeatDelay: 1.5,
-              ease: "easeOut"
-            }}
-          />
-          <motion.path
-            d="M 750 400 L 710 340 L 730 340 L 660 260 L 690 260 L 600 150 L 650 180 L 620 180 L 680 270 L 650 270 L 720 360 Z"
-            fill="none"
-            stroke="#000"
-            strokeWidth="9"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            initial={{ pathLength: 0, opacity: 0 }}
-            animate={{ 
-              pathLength: [0, 1],
-              opacity: [0, 1, 1, 0]
-            }}
-            transition={{ 
-              duration: 0.4,
-              repeat: Infinity,
-              repeatDelay: 1.5,
-              ease: "easeOut"
-            }}
-          />
-
-          {/* Lightning Bolt 2 - Top Right */}
-          <motion.path
-            d="M 750 400 L 830 320 L 810 320 L 900 220 L 870 220 L 1000 80 L 940 130 L 960 130 L 860 240 L 890 240 L 790 350 Z"
-            fill="none"
-            stroke="#dc2626"
-            strokeWidth="22"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            filter="url(#lightning-glow)"
-            initial={{ pathLength: 0, opacity: 0 }}
-            animate={{ 
-              pathLength: [0, 1],
-              opacity: [0, 1, 1, 0]
-            }}
-            transition={{ 
-              duration: 0.4,
-              repeat: Infinity,
-              repeatDelay: 1.5,
-              ease: "easeOut"
-            }}
-          />
-          <motion.path
-            d="M 750 400 L 830 320 L 810 320 L 900 220 L 870 220 L 1000 80 L 940 130 L 960 130 L 860 240 L 890 240 L 790 350 Z"
-            fill="none"
-            stroke="#000"
-            strokeWidth="9"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            initial={{ pathLength: 0, opacity: 0 }}
-            animate={{ 
-              pathLength: [0, 1],
-              opacity: [0, 1, 1, 0]
-            }}
-            transition={{ 
-              duration: 0.4,
-              repeat: Infinity,
-              repeatDelay: 1.5,
-              ease: "easeOut"
-            }}
-          />
-
-          {/* Lightning Bolt 3 - Right Side */}
-          <motion.path
-            d="M 750 400 L 870 425 L 870 405 L 990 455 L 990 435 L 1180 510 L 1120 485 L 1120 505 L 970 445 L 970 465 L 840 415 Z"
-            fill="none"
-            stroke="#dc2626"
-            strokeWidth="20"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            filter="url(#lightning-glow)"
-            initial={{ pathLength: 0, opacity: 0 }}
-            animate={{ 
-              pathLength: [0, 1],
-              opacity: [0, 1, 1, 0]
-            }}
-            transition={{ 
-              duration: 0.4,
-              repeat: Infinity,
-              repeatDelay: 1.5,
-              ease: "easeOut"
-            }}
-          />
-          <motion.path
-            d="M 750 400 L 870 425 L 870 405 L 990 455 L 990 435 L 1180 510 L 1120 485 L 1120 505 L 970 445 L 970 465 L 840 415 Z"
-            fill="none"
-            stroke="#000"
-            strokeWidth="8"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            initial={{ pathLength: 0, opacity: 0 }}
-            animate={{ 
-              pathLength: [0, 1],
-              opacity: [0, 1, 1, 0]
-            }}
-            transition={{ 
-              duration: 0.4,
-              repeat: Infinity,
-              repeatDelay: 1.5,
-              ease: "easeOut"
-            }}
-          />
-
-          {/* Lightning Bolt 4 - Bottom Right */}
-          <motion.path
-            d="M 750 400 L 830 500 L 810 500 L 900 620 L 870 620 L 1000 800 L 940 720 L 960 720 L 860 600 L 890 600 L 790 470 Z"
-            fill="none"
-            stroke="#dc2626"
-            strokeWidth="22"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            filter="url(#lightning-glow)"
-            initial={{ pathLength: 0, opacity: 0 }}
-            animate={{ 
-              pathLength: [0, 1],
-              opacity: [0, 1, 1, 0]
-            }}
-            transition={{ 
-              duration: 0.4,
-              repeat: Infinity,
-              repeatDelay: 1.5,
-              ease: "easeOut"
-            }}
-          />
-          <motion.path
-            d="M 750 400 L 830 500 L 810 500 L 900 620 L 870 620 L 1000 800 L 940 720 L 960 720 L 860 600 L 890 600 L 790 470 Z"
-            fill="none"
-            stroke="#000"
-            strokeWidth="9"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            initial={{ pathLength: 0, opacity: 0 }}
-            animate={{ 
-              pathLength: [0, 1],
-              opacity: [0, 1, 1, 0]
-            }}
-            transition={{ 
-              duration: 0.4,
-              repeat: Infinity,
-              repeatDelay: 1.5,
-              ease: "easeOut"
-            }}
-          />
-
-          {/* Lightning Bolt 5 - Bottom Left */}
-          <motion.path
-            d="M 750 400 L 670 510 L 690 510 L 600 640 L 630 640 L 500 820 L 560 730 L 540 730 L 640 620 L 610 620 L 710 470 Z"
-            fill="none"
-            stroke="#dc2626"
-            strokeWidth="21"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            filter="url(#lightning-glow)"
-            initial={{ pathLength: 0, opacity: 0 }}
-            animate={{ 
-              pathLength: [0, 1],
-              opacity: [0, 1, 1, 0]
-            }}
-            transition={{ 
-              duration: 0.4,
-              repeat: Infinity,
-              repeatDelay: 1.5,
-              ease: "easeOut"
-            }}
-          />
-          <motion.path
-            d="M 750 400 L 670 510 L 690 510 L 600 640 L 630 640 L 500 820 L 560 730 L 540 730 L 640 620 L 610 620 L 710 470 Z"
-            fill="none"
-            stroke="#000"
-            strokeWidth="9"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            initial={{ pathLength: 0, opacity: 0 }}
-            animate={{ 
-              pathLength: [0, 1],
-              opacity: [0, 1, 1, 0]
-            }}
-            transition={{ 
-              duration: 0.4,
-              repeat: Infinity,
-              repeatDelay: 1.5,
-              ease: "easeOut"
-            }}
-          />
-
-          {/* Lightning Bolt 6 - Left Side */}
-          <motion.path
-            d="M 750 400 L 630 425 L 630 405 L 510 455 L 510 435 L 320 510 L 380 485 L 380 505 L 530 445 L 530 465 L 660 415 Z"
-            fill="none"
-            stroke="#dc2626"
-            strokeWidth="20"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            filter="url(#lightning-glow)"
-            initial={{ pathLength: 0, opacity: 0 }}
-            animate={{ 
-              pathLength: [0, 1],
-              opacity: [0, 1, 1, 0]
-            }}
-            transition={{ 
-              duration: 0.4,
-              repeat: Infinity,
-              repeatDelay: 1.5,
-              ease: "easeOut"
-            }}
-          />
-          <motion.path
-            d="M 750 400 L 630 425 L 630 405 L 510 455 L 510 435 L 320 510 L 380 485 L 380 505 L 530 445 L 530 465 L 660 415 Z"
-            fill="none"
-            stroke="#000"
-            strokeWidth="8"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            initial={{ pathLength: 0, opacity: 0 }}
-            animate={{ 
-              pathLength: [0, 1],
-              opacity: [0, 1, 1, 0]
-            }}
-            transition={{ 
-              duration: 0.4,
-              repeat: Infinity,
-              repeatDelay: 1.5,
-              ease: "easeOut"
-            }}
-          />
-
-          {/* Lightning Bolt 7 - Top Center */}
-          <motion.path
-            d="M 750 400 L 765 310 L 745 310 L 780 210 L 760 210 L 810 80 L 775 120 L 795 120 L 760 230 L 780 230 L 755 340 Z"
-            fill="none"
-            stroke="#dc2626"
-            strokeWidth="21"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            filter="url(#lightning-glow)"
-            initial={{ pathLength: 0, opacity: 0 }}
-            animate={{ 
-              pathLength: [0, 1],
-              opacity: [0, 1, 1, 0]
-            }}
-            transition={{ 
-              duration: 0.4,
-              repeat: Infinity,
-              repeatDelay: 1.5,
-              ease: "easeOut"
-            }}
-          />
-          <motion.path
-            d="M 750 400 L 765 310 L 745 310 L 780 210 L 760 210 L 810 80 L 775 120 L 795 120 L 760 230 L 780 230 L 755 340 Z"
-            fill="none"
-            stroke="#000"
-            strokeWidth="9"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            initial={{ pathLength: 0, opacity: 0 }}
-            animate={{ 
-              pathLength: [0, 1],
-              opacity: [0, 1, 1, 0]
-            }}
-            transition={{ 
-              duration: 0.4,
-              repeat: Infinity,
-              repeatDelay: 1.5,
-              ease: "easeOut"
-            }}
-          />
-
-          {/* Lightning Bolt 8 - Bottom Center */}
-          <motion.path
-            d="M 750 400 L 735 500 L 755 500 L 720 610 L 740 610 L 690 750 L 725 700 L 705 700 L 740 590 L 720 590 L 745 470 Z"
-            fill="none"
-            stroke="#dc2626"
-            strokeWidth="22"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            filter="url(#lightning-glow)"
-            initial={{ pathLength: 0, opacity: 0 }}
-            animate={{ 
-              pathLength: [0, 1],
-              opacity: [0, 1, 1, 0]
-            }}
-            transition={{ 
-              duration: 0.4,
-              repeat: Infinity,
-              repeatDelay: 1.5,
-              ease: "easeOut"
-            }}
-          />
-          <motion.path
-            d="M 750 400 L 735 500 L 755 500 L 720 610 L 740 610 L 690 750 L 725 700 L 705 700 L 740 590 L 720 590 L 745 470 Z"
-            fill="none"
-            stroke="#000"
-            strokeWidth="9"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            initial={{ pathLength: 0, opacity: 0 }}
-            animate={{ 
-              pathLength: [0, 1],
-              opacity: [0, 1, 1, 0]
-            }}
-            transition={{ 
-              duration: 0.4,
-              repeat: Infinity,
-              repeatDelay: 1.5,
-              ease: "easeOut"
-            }}
-          />
-
-          {/* Lightning Bolt 9 - Top Left-Center (between 1 and 7) */}
-          <motion.path
-            d="M 750 400 L 720 320 L 740 320 L 690 230 L 710 230 L 650 110 L 690 150 L 670 150 L 710 250 L 690 250 L 730 350 Z"
-            fill="none"
-            stroke="#dc2626"
-            strokeWidth="20"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            filter="url(#lightning-glow)"
-            initial={{ pathLength: 0, opacity: 0 }}
-            animate={{ 
-              pathLength: [0, 1],
-              opacity: [0, 1, 1, 0]
-            }}
-            transition={{ 
-              duration: 0.4,
-              repeat: Infinity,
-              repeatDelay: 1.5,
-              ease: "easeOut"
-            }}
-          />
-          <motion.path
-            d="M 750 400 L 720 320 L 740 320 L 690 230 L 710 230 L 650 110 L 690 150 L 670 150 L 710 250 L 690 250 L 730 350 Z"
-            fill="none"
-            stroke="#000"
-            strokeWidth="8"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            initial={{ pathLength: 0, opacity: 0 }}
-            animate={{ 
-              pathLength: [0, 1],
-              opacity: [0, 1, 1, 0]
-            }}
-            transition={{ 
-              duration: 0.4,
-              repeat: Infinity,
-              repeatDelay: 1.5,
-              ease: "easeOut"
-            }}
-          />
-
-          {/* Lightning Bolt 10 - Top Right-Center (between 2 and 7) */}
-          <motion.path
-            d="M 750 400 L 790 320 L 770 320 L 830 230 L 810 230 L 880 110 L 840 150 L 860 150 L 810 250 L 830 250 L 780 350 Z"
-            fill="none"
-            stroke="#dc2626"
-            strokeWidth="21"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            filter="url(#lightning-glow)"
-            initial={{ pathLength: 0, opacity: 0 }}
-            animate={{ 
-              pathLength: [0, 1],
-              opacity: [0, 1, 1, 0]
-            }}
-            transition={{ 
-              duration: 0.4,
-              repeat: Infinity,
-              repeatDelay: 1.5,
-              ease: "easeOut"
-            }}
-          />
-          <motion.path
-            d="M 750 400 L 790 320 L 770 320 L 830 230 L 810 230 L 880 110 L 840 150 L 860 150 L 810 250 L 830 250 L 780 350 Z"
-            fill="none"
-            stroke="#000"
-            strokeWidth="9"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            initial={{ pathLength: 0, opacity: 0 }}
-            animate={{ 
-              pathLength: [0, 1],
-              opacity: [0, 1, 1, 0]
-            }}
-            transition={{ 
-              duration: 0.4,
-              repeat: Infinity,
-              repeatDelay: 1.5,
-              ease: "easeOut"
-            }}
-          />
-
-          {/* Lightning Bolt 11 - Bottom Left-Center (between 5 and 8) */}
-          <motion.path
-            d="M 750 400 L 710 490 L 730 490 L 680 600 L 700 600 L 620 740 L 660 680 L 640 680 L 690 590 L 670 590 L 720 470 Z"
-            fill="none"
-            stroke="#dc2626"
-            strokeWidth="20"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            filter="url(#lightning-glow)"
-            initial={{ pathLength: 0, opacity: 0 }}
-            animate={{ 
-              pathLength: [0, 1],
-              opacity: [0, 1, 1, 0]
-            }}
-            transition={{ 
-              duration: 0.4,
-              repeat: Infinity,
-              repeatDelay: 1.5,
-              ease: "easeOut"
-            }}
-          />
-          <motion.path
-            d="M 750 400 L 710 490 L 730 490 L 680 600 L 700 600 L 620 740 L 660 680 L 640 680 L 690 590 L 670 590 L 720 470 Z"
-            fill="none"
-            stroke="#000"
-            strokeWidth="8"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            initial={{ pathLength: 0, opacity: 0 }}
-            animate={{ 
-              pathLength: [0, 1],
-              opacity: [0, 1, 1, 0]
-            }}
-            transition={{ 
-              duration: 0.4,
-              repeat: Infinity,
-              repeatDelay: 1.5,
-              ease: "easeOut"
-            }}
-          />
-
-          {/* Lightning Bolt 12 - Bottom Right-Center (between 4 and 8) */}
-          <motion.path
-            d="M 750 400 L 790 490 L 770 490 L 820 600 L 800 600 L 880 740 L 840 680 L 860 680 L 810 590 L 830 590 L 780 470 Z"
-            fill="none"
-            stroke="#dc2626"
-            strokeWidth="21"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            filter="url(#lightning-glow)"
-            initial={{ pathLength: 0, opacity: 0 }}
-            animate={{ 
-              pathLength: [0, 1],
-              opacity: [0, 1, 1, 0]
-            }}
-            transition={{ 
-              duration: 0.4,
-              repeat: Infinity,
-              repeatDelay: 1.5,
-              ease: "easeOut"
-            }}
-          />
-          <motion.path
-            d="M 750 400 L 790 490 L 770 490 L 820 600 L 800 600 L 880 740 L 840 680 L 860 680 L 810 590 L 830 590 L 780 470 Z"
-            fill="none"
-            stroke="#000"
-            strokeWidth="9"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            initial={{ pathLength: 0, opacity: 0 }}
-            animate={{ 
-              pathLength: [0, 1],
-              opacity: [0, 1, 1, 0]
-            }}
-            transition={{ 
-              duration: 0.4,
-              repeat: Infinity,
-              repeatDelay: 1.5,
-              ease: "easeOut"
-            }}
-          />
+            {[
+              "M 750 400 L 710 340 L 730 340 L 660 260 L 690 260 L 600 150",
+              "M 750 400 L 830 320 L 810 320 L 900 220 L 870 220 L 1000 80",
+              "M 750 400 L 870 425 L 870 405 L 990 455 L 990 435 L 1180 510",
+              "M 750 400 L 830 500 L 810 500 L 900 620 L 870 620 L 1000 800",
+              "M 750 400 L 670 510 L 690 510 L 600 640 L 630 640 L 500 820",
+              "M 750 400 L 630 425 L 630 405 L 510 455 L 510 435 L 320 510",
+              "M 750 400 L 765 310 L 745 310 L 780 210 L 760 210 L 810 80",
+              "M 750 400 L 735 500 L 755 500 L 720 610 L 740 610 L 690 750"
+            ].map((path, i) => (
+              <g key={i}>
+                <motion.path
+                  d={path}
+                  fill="none"
+                  stroke="#dc2626"
+                  strokeWidth="20"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  filter="url(#lightning-glow)"
+                  initial={{ pathLength: 0, opacity: 0 }}
+                  animate={{ 
+                    pathLength: [0, 1],
+                    opacity: [0, 1, 1, 0]
+                  }}
+                  transition={{ 
+                    duration: 0.4,
+                    repeat: Infinity,
+                    repeatDelay: 1.5,
+                    delay: i * 0.05,
+                    ease: "easeOut"
+                  }}
+                />
+                <motion.path
+                  d={path}
+                  fill="none"
+                  stroke="#000"
+                  strokeWidth="8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  initial={{ pathLength: 0, opacity: 0 }}
+                  animate={{ 
+                    pathLength: [0, 1],
+                    opacity: [0, 1, 1, 0]
+                  }}
+                  transition={{ 
+                    duration: 0.4,
+                    repeat: Infinity,
+                    repeatDelay: 1.5,
+                    delay: i * 0.05,
+                    ease: "easeOut"
+                  }}
+                />
+              </g>
+            ))}
           </svg>
 
           {/* Gear 5 Luffy Image */}
@@ -605,7 +332,7 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Title - Bottom of screen with better design */}
+      {/* Title */}
       <motion.div
         className="absolute bottom-16 left-0 right-0 text-center z-20 px-4"
         initial={{ opacity: 0, y: 20 }}
