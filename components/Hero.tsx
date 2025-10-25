@@ -142,7 +142,7 @@ export default function Hero() {
           </svg>
 
           {/* Gear 5 Luffy Image */}
-          <div className="relative w-full h-full max-w-[1400px]">
+          <div className="relative w-full h-full max-w-[1400px]" style={{ transform: 'translate(-10px, -20px)' }}>
             <Image
               src="/luffy-gear5-transparent.png"
               alt="Gear 5 Luffy"
