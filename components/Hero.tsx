@@ -7,21 +7,59 @@ import Image from "next/image";
 export default function Hero() {
   const heroRef = useRef<HTMLDivElement>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
+  const normalLuffyRef = useRef<HTMLDivElement>(null);
+  const gear5LuffyRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    let animationFrameId: number;
+    
     const handleMouseMove = (e: MouseEvent) => {
       if (heroRef.current && overlayRef.current) {
         const rect = heroRef.current.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
         
+        // For mask reveal
         overlayRef.current.style.setProperty('--mouse-x', `${x}px`);
         overlayRef.current.style.setProperty('--mouse-y', `${y}px`);
+        
+        // Cancel previous animation frame
+        if (animationFrameId) {
+          cancelAnimationFrame(animationFrameId);
+        }
+        
+        // For parallax effect
+        animationFrameId = requestAnimationFrame(() => {
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+          
+          // Calculate offset from center (normalized to -1 to 1)
+          const offsetX = (x - centerX) / centerX;
+          const offsetY = (y - centerY) / centerY;
+          
+          // Apply parallax movement (same direction as mouse, noticeable but smooth)
+          const parallaxStrength = 25; // increased for visibility
+          const moveX = offsetX * parallaxStrength;
+          const moveY = offsetY * parallaxStrength;
+          
+          // Apply to both images
+          if (normalLuffyRef.current) {
+            normalLuffyRef.current.style.transform = `translate(${moveX}px, ${moveY}px)`;
+          }
+          if (gear5LuffyRef.current) {
+            gear5LuffyRef.current.style.transform = `translate(${moveX - 20}px, ${moveY - 20}px)`;
+          }
+        });
       }
     };
 
     window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+      }
+    };
   }, []);
 
   return (
@@ -52,7 +90,10 @@ export default function Hero() {
       <div className="relative w-full h-full flex items-center justify-center">
         {/* Base layer - Normal Luffy */}
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="relative w-full h-full max-w-[1400px]">
+          <div 
+            ref={normalLuffyRef}
+            className="relative w-full h-full max-w-[1400px] transition-transform duration-500 ease-out"
+          >
             <Image
               src="/luffy-normal-transparent.png"
               alt="Luffy"
@@ -142,7 +183,10 @@ export default function Hero() {
           </svg>
 
           {/* Gear 5 Luffy Image */}
-          <div className="relative w-full h-full max-w-[1400px]" style={{ transform: 'translate(-10px, -20px)' }}>
+          <div 
+            ref={gear5LuffyRef}
+            className="relative w-full h-full max-w-[1400px] transition-transform duration-500 ease-out"
+          >
             <Image
               src="/luffy-gear5-transparent.png"
               alt="Gear 5 Luffy"
@@ -155,47 +199,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Title */}
-      <motion.div
-        className="absolute bottom-16 left-0 right-0 text-center z-20 px-4"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5, duration: 0.8 }}
-      >
-        <motion.h1 
-          className="text-5xl sm:text-6xl md:text-7xl lg:text-9xl font-black mb-4 tracking-tight"
-          initial={{ scale: 0.9 }}
-          animate={{ scale: 1 }}
-          transition={{ delay: 0.7, duration: 0.5 }}
-        >
-          <span className="inline-block bg-gradient-to-r from-red-600 via-orange-500 to-yellow-400 bg-clip-text text-transparent drop-shadow-lg" style={{
-            WebkitTextStroke: '2px rgba(239, 68, 68, 0.1)',
-            paintOrder: 'stroke fill'
-          }}>
-            MONKEY D.
-          </span>
-          <br />
-          <span className="inline-block bg-gradient-to-r from-yellow-400 via-orange-500 to-red-600 bg-clip-text text-transparent drop-shadow-2xl" style={{
-            WebkitTextStroke: '2px rgba(239, 68, 68, 0.15)',
-            paintOrder: 'stroke fill',
-            letterSpacing: '0.05em'
-          }}>
-            LUFFY
-          </span>
-        </motion.h1>
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1, duration: 0.8 }}
-        >
-          <p className="text-xl sm:text-2xl md:text-3xl text-gray-700 font-semibold tracking-wide">
-            未来の海賊王
-          </p>
-          <p className="text-lg sm:text-xl md:text-2xl text-gray-600 font-light mt-1">
-            Future Pirate King
-          </p>
-        </motion.div>
-      </motion.div>
     </div>
   );
 }
