@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+@theme {
+  --font-one-piece: var(--font-one-piece);
+}
+
 body {
   background-color: white;
   color: #000;
