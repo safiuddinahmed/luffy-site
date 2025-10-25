@@ -425,6 +425,170 @@ export default function Hero() {
               ease: "easeOut"
             }}
           />
+
+          {/* Lightning Bolt 9 - Top Left-Center (between 1 and 7) */}
+          <motion.path
+            d="M 750 400 L 720 320 L 740 320 L 690 230 L 710 230 L 650 110 L 690 150 L 670 150 L 710 250 L 690 250 L 730 350 Z"
+            fill="none"
+            stroke="#dc2626"
+            strokeWidth="20"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            filter="url(#lightning-glow)"
+            initial={{ pathLength: 0, opacity: 0 }}
+            animate={{ 
+              pathLength: [0, 1],
+              opacity: [0, 1, 1, 0]
+            }}
+            transition={{ 
+              duration: 0.4,
+              repeat: Infinity,
+              repeatDelay: 1.5,
+              ease: "easeOut"
+            }}
+          />
+          <motion.path
+            d="M 750 400 L 720 320 L 740 320 L 690 230 L 710 230 L 650 110 L 690 150 L 670 150 L 710 250 L 690 250 L 730 350 Z"
+            fill="none"
+            stroke="#000"
+            strokeWidth="8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            initial={{ pathLength: 0, opacity: 0 }}
+            animate={{ 
+              pathLength: [0, 1],
+              opacity: [0, 1, 1, 0]
+            }}
+            transition={{ 
+              duration: 0.4,
+              repeat: Infinity,
+              repeatDelay: 1.5,
+              ease: "easeOut"
+            }}
+          />
+
+          {/* Lightning Bolt 10 - Top Right-Center (between 2 and 7) */}
+          <motion.path
+            d="M 750 400 L 790 320 L 770 320 L 830 230 L 810 230 L 880 110 L 840 150 L 860 150 L 810 250 L 830 250 L 780 350 Z"
+            fill="none"
+            stroke="#dc2626"
+            strokeWidth="21"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            filter="url(#lightning-glow)"
+            initial={{ pathLength: 0, opacity: 0 }}
+            animate={{ 
+              pathLength: [0, 1],
+              opacity: [0, 1, 1, 0]
+            }}
+            transition={{ 
+              duration: 0.4,
+              repeat: Infinity,
+              repeatDelay: 1.5,
+              ease: "easeOut"
+            }}
+          />
+          <motion.path
+            d="M 750 400 L 790 320 L 770 320 L 830 230 L 810 230 L 880 110 L 840 150 L 860 150 L 810 250 L 830 250 L 780 350 Z"
+            fill="none"
+            stroke="#000"
+            strokeWidth="9"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            initial={{ pathLength: 0, opacity: 0 }}
+            animate={{ 
+              pathLength: [0, 1],
+              opacity: [0, 1, 1, 0]
+            }}
+            transition={{ 
+              duration: 0.4,
+              repeat: Infinity,
+              repeatDelay: 1.5,
+              ease: "easeOut"
+            }}
+          />
+
+          {/* Lightning Bolt 11 - Bottom Left-Center (between 5 and 8) */}
+          <motion.path
+            d="M 750 400 L 710 490 L 730 490 L 680 600 L 700 600 L 620 740 L 660 680 L 640 680 L 690 590 L 670 590 L 720 470 Z"
+            fill="none"
+            stroke="#dc2626"
+            strokeWidth="20"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            filter="url(#lightning-glow)"
+            initial={{ pathLength: 0, opacity: 0 }}
+            animate={{ 
+              pathLength: [0, 1],
+              opacity: [0, 1, 1, 0]
+            }}
+            transition={{ 
+              duration: 0.4,
+              repeat: Infinity,
+              repeatDelay: 1.5,
+              ease: "easeOut"
+            }}
+          />
+          <motion.path
+            d="M 750 400 L 710 490 L 730 490 L 680 600 L 700 600 L 620 740 L 660 680 L 640 680 L 690 590 L 670 590 L 720 470 Z"
+            fill="none"
+            stroke="#000"
+            strokeWidth="8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            initial={{ pathLength: 0, opacity: 0 }}
+            animate={{ 
+              pathLength: [0, 1],
+              opacity: [0, 1, 1, 0]
+            }}
+            transition={{ 
+              duration: 0.4,
+              repeat: Infinity,
+              repeatDelay: 1.5,
+              ease: "easeOut"
+            }}
+          />
+
+          {/* Lightning Bolt 12 - Bottom Right-Center (between 4 and 8) */}
+          <motion.path
+            d="M 750 400 L 790 490 L 770 490 L 820 600 L 800 600 L 880 740 L 840 680 L 860 680 L 810 590 L 830 590 L 780 470 Z"
+            fill="none"
+            stroke="#dc2626"
+            strokeWidth="21"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            filter="url(#lightning-glow)"
+            initial={{ pathLength: 0, opacity: 0 }}
+            animate={{ 
+              pathLength: [0, 1],
+              opacity: [0, 1, 1, 0]
+            }}
+            transition={{ 
+              duration: 0.4,
+              repeat: Infinity,
+              repeatDelay: 1.5,
+              ease: "easeOut"
+            }}
+          />
+          <motion.path
+            d="M 750 400 L 790 490 L 770 490 L 820 600 L 800 600 L 880 740 L 840 680 L 860 680 L 810 590 L 830 590 L 780 470 Z"
+            fill="none"
+            stroke="#000"
+            strokeWidth="9"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            initial={{ pathLength: 0, opacity: 0 }}
+            animate={{ 
+              pathLength: [0, 1],
+              opacity: [0, 1, 1, 0]
+            }}
+            transition={{ 
+              duration: 0.4,
+              repeat: Infinity,
+              repeatDelay: 1.5,
+              ease: "easeOut"
+            }}
+          />
           </svg>
 
           {/* Gear 5 Luffy Image */}
