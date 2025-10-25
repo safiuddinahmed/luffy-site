@@ -23,7 +23,7 @@ export default function HorizontalGallery() {
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {/* Layer 1: Flowing Lines */}
         <motion.svg 
-          className="absolute inset-0 w-full h-full opacity-[0.08]"
+          className="absolute inset-0 w-full h-full opacity-[0.25]"
           xmlns="http://www.w3.org/2000/svg"
           animate={{
             x: [0, 30, 0],
@@ -49,7 +49,7 @@ export default function HorizontalGallery() {
 
         {/* Layer 2: Organic Shapes */}
         <motion.svg 
-          className="absolute inset-0 w-full h-full opacity-[0.06]"
+          className="absolute inset-0 w-full h-full opacity-[0.20]"
           xmlns="http://www.w3.org/2000/svg"
           animate={{
             x: [0, -25, 0],
@@ -91,7 +91,7 @@ export default function HorizontalGallery() {
 
         {/* Layer 3: Subtle Grid */}
         <motion.svg 
-          className="absolute inset-0 w-full h-full opacity-[0.04]"
+          className="absolute inset-0 w-full h-full opacity-[0.15]"
           xmlns="http://www.w3.org/2000/svg"
           animate={{
             rotate: [0, 2, 0],
@@ -122,8 +122,10 @@ export default function HorizontalGallery() {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-black leading-tight" style={{ fontFamily: 'var(--font-one-piece)' }}>
-              A Journey Through<br />
-              <span className="text-gray-600">Luffy&apos;s Legacy</span>
+              A JOURNEY THROUGH<br />
+              <span className="text-[2rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[4rem] xl:text-[5rem] font-normal tracking-wide leading-none text-gray-700" style={{ fontFamily: 'var(--font-one-piece)' }}>
+              LUFFY'S LEGACY
+            </span>
             </h2>
           </motion.div>
         </div>
