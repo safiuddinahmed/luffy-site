@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 
 export default function Hero() {
@@ -9,6 +9,18 @@ export default function Hero() {
   const overlayRef = useRef<HTMLDivElement>(null);
   const normalLuffyRef = useRef<HTMLDivElement>(null);
   const gear5LuffyRef = useRef<HTMLDivElement>(null);
+
+  // Track scroll progress for hero shrinking
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ["start start", "end start"]
+  });
+
+  // Transform scroll to scale (1 -> 0.6)
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.6]);
+  
+  // Transform scroll to opacity (1 -> 0.3)
+  const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [1, 0.8, 0.3]);
 
   useEffect(() => {
     let animationFrameId: number;
@@ -86,8 +98,11 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-transparent to-white/15" />
       </div>
 
-      {/* Main portrait container */}
-      <div className="relative w-full h-full flex items-center justify-center">
+      {/* Main portrait container with scroll-based scaling */}
+      <motion.div 
+        style={{ scale, opacity }}
+        className="relative w-full h-full flex items-center justify-center"
+      >
         {/* Base layer - Normal Luffy */}
         <div className="absolute inset-0 flex items-center justify-center">
           <div 
@@ -197,7 +212,7 @@ export default function Hero() {
             />
           </div>
         </div>
-      </div>
+      </motion.div>
 
     </div>
   );
