@@ -77,7 +77,7 @@ export default function Hero() {
   return (
     <div
       ref={heroRef}
-      className="relative w-full h-screen overflow-hidden bg-white"
+      className="relative w-full h-screen overflow-hidden"
     >
       {/* Hero Background Image */}
       <div className="absolute inset-0 overflow-hidden">
