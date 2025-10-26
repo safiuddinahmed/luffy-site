@@ -129,15 +129,15 @@ export default function HorizontalGallery() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="flex items-center gap-4 text-gray-500"
+            className="flex items-center gap-4 text-gray-700"
           >
-            <div className="h-px w-16 bg-gray-300" />
-            <p className="text-xs uppercase tracking-[0.25em] font-medium">
+            <div className="h-0.5 w-16 bg-gray-400" />
+            <p className="text-xs uppercase tracking-[0.25em] font-bold">
               Scroll to explore
             </p>
-            <div className="flex-1 h-px bg-gray-200 relative overflow-hidden">
+            <div className="flex-1 h-0.5 bg-gray-300 relative overflow-hidden">
               <motion.div 
-                className="absolute inset-y-0 left-0 bg-gray-400"
+                className="absolute inset-y-0 left-0 bg-gray-600"
                 style={{ 
                   width: useTransform(scrollYProgress, [0, 1], ["0%", "100%"])
                 }}

@@ -202,6 +202,7 @@ export default function Hero() {
           <div 
             ref={gear5LuffyRef}
             className="relative w-full h-full max-w-[1400px] transition-transform duration-500 ease-out"
+            style={{ marginLeft: '10px' }}
           >
             <Image
               src="/luffy-gear5-transparent.png"
