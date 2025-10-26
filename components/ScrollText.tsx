@@ -30,7 +30,14 @@ export default function ScrollText() {
             style={{ x: text1X }}
             className="absolute top-[38%] left-1/2 -translate-x-1/2 whitespace-nowrap"
           >
-            <h2 className="text-[3rem] sm:text-[4rem] md:text-[5rem] lg:text-[6rem] xl:text-[8rem] font-semibold tracking-tight leading-none text-black" style={{ fontFamily: 'var(--font-one-piece)' }}>
+            <h2 
+              className="text-[3rem] sm:text-[4rem] md:text-[5rem] lg:text-[6rem] xl:text-[8rem] font-semibold tracking-tight leading-none text-black" 
+              style={{ 
+                fontFamily: 'var(--font-one-piece)',
+                WebkitTextStroke: '1.5px #e5e7eb',
+                paintOrder: 'stroke fill'
+              }}
+            >
               MONKEY D. LUFFY
             </h2>
           </motion.div>
@@ -40,7 +47,14 @@ export default function ScrollText() {
             style={{ x: text2X }}
             className="absolute top-[52%] left-1/2 -translate-x-1/2 whitespace-nowrap"
           >
-            <h2 className="text-[2rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[4rem] xl:text-[5rem] font-normal tracking-wide leading-none text-gray-700" style={{ fontFamily: 'var(--font-one-piece)' }}>
+            <h2 
+              className="text-[2rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[4rem] xl:text-[5rem] font-normal tracking-wide leading-none text-gray-700" 
+              style={{ 
+                fontFamily: 'var(--font-one-piece)',
+                WebkitTextStroke: '1px #e5e7eb',
+                paintOrder: 'stroke fill'
+              }}
+            >
               FUTURE KING OF THE PIRATES
             </h2>
           </motion.div>

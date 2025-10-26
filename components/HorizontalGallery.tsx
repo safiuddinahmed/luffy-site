@@ -29,9 +29,23 @@ export default function HorizontalGallery() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-black leading-tight" style={{ fontFamily: 'var(--font-one-piece)' }}>
+            <h2 
+              className="text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-black leading-tight" 
+              style={{ 
+                fontFamily: 'var(--font-one-piece)',
+                WebkitTextStroke: '1.5px #e5e7eb',
+                paintOrder: 'stroke fill'
+              }}
+            >
               A JOURNEY THROUGH<br />
-              <span className="text-[2rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[4rem] xl:text-[5rem] font-normal tracking-wide leading-none text-gray-700" style={{ fontFamily: 'var(--font-one-piece)' }}>
+              <span 
+                className="text-[2rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[4rem] xl:text-[5rem] font-normal tracking-wide leading-none text-gray-700" 
+                style={{ 
+                  fontFamily: 'var(--font-one-piece)',
+                  WebkitTextStroke: '1px #e5e7eb',
+                  paintOrder: 'stroke fill'
+                }}
+              >
               LUFFY&apos;S LEGACY
             </span>
             </h2>
