@@ -31,11 +31,9 @@ export default function ScrollText() {
             className="absolute top-[38%] left-1/2 -translate-x-1/2 whitespace-nowrap"
           >
             <h2 
-              className="text-[3rem] sm:text-[4rem] md:text-[5rem] lg:text-[6rem] xl:text-[8rem] font-semibold tracking-tight leading-none text-black" 
+              className="text-[3rem] sm:text-[4rem] md:text-[5rem] lg:text-[6rem] xl:text-[8rem] font-bold tracking-tight leading-none text-black" 
               style={{ 
-                fontFamily: 'var(--font-one-piece)',
-                WebkitTextStroke: '1.5px #e5e7eb',
-                paintOrder: 'stroke fill'
+                fontFamily: 'var(--font-one-piece)'
               }}
             >
               MONKEY D. LUFFY
@@ -48,11 +46,9 @@ export default function ScrollText() {
             className="absolute top-[52%] left-1/2 -translate-x-1/2 whitespace-nowrap"
           >
             <h2 
-              className="text-[2rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[4rem] xl:text-[5rem] font-normal tracking-wide leading-none text-gray-700" 
+              className="text-[2rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[4rem] xl:text-[5rem] font-medium tracking-wide leading-none text-gray-600" 
               style={{ 
-                fontFamily: 'var(--font-one-piece)',
-                WebkitTextStroke: '1px #e5e7eb',
-                paintOrder: 'stroke fill'
+                fontFamily: 'var(--font-one-piece)'
               }}
             >
               FUTURE KING OF THE PIRATES
